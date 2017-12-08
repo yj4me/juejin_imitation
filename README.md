@@ -1,0 +1,2 @@
+# juejin_imitation
+使用Angularjs仿写的掘金首页及写文章界面。后台是本地的Node.js服务器
