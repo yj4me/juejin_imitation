@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>写文章</title>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body ng-app="articleApp" ng-controller="articleCtrl">
+<form ng-submit="uploadArticle()">
+	<div class="container">
+		<div class="form-group articleTitle">
+			<!-- <input type="text" name="" ng-model="articleData.author"> -->
+			<input type="text" name="" placeholder="输入文章标题..." ng-model="articleData.title">
+			<input type="text" name="" placeholder="文章将会自动保存" disabled="disabled" class="hidden-xs hidden-sm">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="">...</a></li>
+				<li class="dropdown active">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">发布
+					<span class="caret"></span></a>
+					<div class="choice dropdown-menu" role="menu">
+						<h4>发布文章</h4>
+						<h6>选择分类</h6>
+						<div> 	
+							<label 
+							ng-class="{true:'checkbox-inline active',false:'checkbox-inline'}[category.onSw]"
+							ng-repeat="category in categories" ng-click="myChoice(category.id,$event)">
+					
+								<input type="radio" name="category" value="{{ category.name }}">{{ category.name }}
+							</label>		
+						</div>  
+						<h6>标签</h6>
+						<input type="text" name="" placeholder="搜索标签（可选填）" ng-model="articleData.label">
+						<!-- <ul><li ng-repeat="list in lists ｜filter:search"></li></ul> -->
+						<div>
+						    <button class="btn_uploadArticle" type="submit">确定并发布</button>
+
+						</div>
+					</div>
+				</li>
+				<li class="dropdown active">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<img src="">
+					</a>
+					
+					<ul class="dropdown-menu" role="menu">
+						<li><a>分享链接</a></li>
+						<li><a>分享链接</a></li>
+						<li><a>分享链接</a></li>
+						<li><a>分享链接</a></li>
+						<li><a>分享链接</a></li>
+						<li><a>分享链接</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>	
+	</div>
+	
+	<textarea id="text-input" oninput="this.editor.update()" ng-model="articleData.content"></textarea>
+	<div id="preview"></div>
+</form>
+
+	<span class="pull-right"> <span id="length"></span> 字数</span>
+	
+	<script type="text/javascript" src="../js/jquery－1.12.4.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/angular.min.js"></script>
+	<script type="text/javascript" src="../js/article.js"></script>
+	<script type="text/javascript" src="../js/markdown.min.js"></script>
+	<script type="text/javascript">
+		function Editor(input,preview,length){
+			this.update = function(){
+				preview.innerHTML = markdown.toHTML(input.value);
+
+				length.innerHTML = preview.innerText.trim().length;		
+				
+			};
+			input.editor = this;
+			this.update();
+		}
+		var $ = function(id){return document.getElementById(id);}
+		new Editor($("text-input"),$("preview"),$("length"));	
+	</script>
+	
+</body>
+</html>

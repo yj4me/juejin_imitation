@@ -1,0 +1,149 @@
+input {border:none;outline: none;background-color: transparent;}
+body{background-color: #f4f5f5;}
+.search {border:1px solid #e5e6e7;background-color: #f9fafb;padding: 3px 10px;margin: 10px 30px 0 140px;}
+.login{margin-top: 16px;color:#1371fb;}
+.login a{color:#1371fb;}
+.login a:hover{text-decoration: none;}
+.highlight{color:#1371fb !important;}
+/*重写bootstrap样式*/
+.navbar-default {
+    background-color: #fff;
+    border-color: #e7e7e7;
+}
+.navbar{margin-bottom: 0;}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
+    color: #1371fb;
+    background-color: transparent;
+}
+
+
+/*回到顶部按钮*/
+#gotoTop{display: none;position: fixed;top: 80%;left: 90%;cursor: pointer;
+  padding: 4px;width:40px;height:40px;border-radius:20px;
+  background-color: #fff;
+  transition: all 0.4s ease;
+}
+#gotoTop:hover{box-shadow: 1px 1px 2px #e0e0e0;background-color: #aaa;}
+#gotoTop:hover .arrow{}
+.arrow{width: 0;height: 0;margin: -5px auto 0;border:10px solid transparent;border-bottom-color: #aaa;
+  transition: all 0.4s ease;
+}
+.stick{width: 8px;height: 10px;margin:0 auto ;border-radius: 1px;background-color: #aaa;
+  transition: all 0.4s ease;
+}
+#gotoTop:hover .arrow{border-bottom-color: #fff;}
+#gotoTop:hover .stick{background-color: #fff;}
+
+/*首页样式*/
+.home_1{background-color:#4d7ad7;width: 100%;color:#fff;}
+.home_1 .row{margin: 35px 0;}
+.home_1 .description{padding:25px 40px;}
+.home_2{margin-top: 30px;}
+.main{background-color: #fff;}
+
+/*注册表单*/
+.home_1 .regist a{text-decoration: none; color: #fff;}
+.home_1 .regist .btn_regist{border:1px solid #fff;padding: 5px 20px;background-color: transparent;}
+.home_1 .regist .btn_regist:hover{background-color: rgba(255,255,255,.4);cursor: pointer;}
+.home_1 .regist small{margin-left: 20px;color:#a6bceb;}
+.home_1 .form-group span{color: #fff;}
+
+/*去除默认样式*/
+.main .navbar-right li{border-bottom: none;}
+.main .navbar-default{border:none;border-bottom: 1px solid #ebebeb;border-radius: 0;}
+.main ul{list-style: none; padding: 0;}
+
+.main ul li{border-bottom: 1px solid #ebebeb;}
+.main ul li:hover{background-color:#fafafa; }
+.main ul li:hover article .share{display: inline-block;}
+.main ul li article{padding: 10px 20px;}
+.main ul li article p{color:#b2bac1;font-size: 14px;}
+
+.main ul li article .btn-group{margin-right: 20px;}
+.main ul li article button{padding: 5px 15px;}
+.main ul li article .share{display: none;transition: all 4s ease;}
+
+/*侧边栏样式*/
+.widget {
+  background: #ffffff;
+  padding: 21px 30px;
+}
+.widget {
+  margin-bottom: 35px;
+}
+.widget .title {
+  margin-top: 0;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 21px;
+  position: relative;
+}
+.widget .title  a:hover{text-decoration: none;}
+.widget .title:after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: #e67e22;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+}
+.tag-cloud a {
+  background-color: #f3f6f3;
+  border-radius: 15px;
+  padding: 5px 20px;
+  color: #3c3c3c;
+  line-height: 1.5em;
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  -webkit-transition: all 0.2s ease;
+       -o-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+}
+.tag-cloud a:hover {
+  color: #ffffff;
+  background: #1fca23;
+  text-decoration: none;
+}
+.widget ul{list-style: none;}
+.widget ul li span{display: inline-block;}
+.widget ul li span.avator{width: 40px;height: 40px;border-radius: 20px;background-color: pink;}
+.widget ul li span.con{ width:80%;height: 40px;margin-left: 20px;background-color: deeppink;}
+.widget ul li span.con .title{height: 20px;width:100%;}
+.media-left a img{width:48px;height:48px;border-radius:24px;}
+.media-body{padding-top: 5px;}
+
+
+/*详情页样式*/
+.main{padding: 20px;}
+.widget ul{padding: 0;}
+.thumbs-down{margin-left: 20px;}
+
+
+/*登录后的首页样式*/
+.navbar-right li a img{width: 30px;height: 30px;border-radius: 15px;background-color: pink;}
+.write a{padding-right: 0 !important;}
+.share a{padding-left: 0 !important;}
+
+/*写文章页面*/
+.articleTitle{margin-bottom: 0;}
+.articleTitle input:nth-of-type(1){height:52px;width:66%;border-radius: 0;outline: none;font-size: 30px;}
+
+
+textarea{height: 500px;width:50%;font-size:22px;outline: none;padding: 20px;}
+#preview{float:right;width:50%;height: 500px;border-top:1px solid #315;border-bottom:1px solid #315; }
+.pull-right{margin-right: 10px;}
+#length{color:#1371fb;font-size: 20px;}
+
+.choice{position: absolute;width: 300px;left: -200px;background-color: #fff;padding: 10px;}
+.choice:before{content: "";width: 0;height: 0;border-width:10px;border-style:dashed dashed solid dashed;border-color:transparent transparent  #fff transparent;
+  position:absolute; top:-20px;left: 240px;
+}
+.choice input[type='radio'] {opacity:0; display:inline-block;height:0;margin-top: 0;width: 100%;font-size: 14px;}
+.choice label {background-color:#f3f6f3;padding: 0 15px 15px;margin-bottom: 10px;}
+.choice label.active{color: #1371fb;border:1px solid #1371fb;background-color: #fff;}
+.choice input[type='text']{font-size: 14px;text-decoration: underline;}
+
+li.open .caret{transform: rotateX(180deg);}
+.choice .btn_uploadArticle{border:1px solid #1371fb;padding: 5px 20px;background-color: transparent;color: #1371fb;margin-left:80px;}
+.choice .btn_uploadArticle:hover{background-color:rgba(19,113,251,0.4);}

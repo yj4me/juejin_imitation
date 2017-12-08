@@ -1,0 +1,54 @@
+<div class="main">
+	<nav class="navbar navbar-default">
+		<div class="navbar-header">
+		  <a class="navbar-brand" href="#">热门文章</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav navbar-right">
+		  	<li ng-class="{true:'active',false:''}[currentSub=='recommend']" ng-click="click('recommend')"><a>推荐</a></li>
+		    <li ng-class="{true:'active',false:''}[currentSub=='前端']" ng-click="click('前端')"><a>前端</a></li>
+		    <li ng-class="{true:'active',false:''}[currentSub=='Android']" ng-click="click('Android')"><a>Android</a></li>
+		    <li ng-class="{true:'active',false:''}[currentSub=='后端']" ng-click="click('后端')"><a>后端</a></li>
+		    <li ng-class="{true:'active',false:''}[currentSub=='人工智能']" ng-click="click('人工智能')"><a>人工智能</a></li>
+		    <li ng-class="{true:'active',false:''}[currentSub=='ios']" ng-click="click('ios')"><a>ios</a></li>
+		    <li ng-class="{true:'active',false:''}[currentSub=='工具资源']" ng-click="click('工具资源')"><a>工具资源</a></li>
+		  </ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+	<ul>
+		<li ng-repeat="data in datas" ng-click="gotoDetail({title:data.title,content:data.content})">
+			<article>
+				<p>
+					<span>{{ data.author}}</span><span> · </span>
+					<span>{{ data.datetime }}</span><span> · </span>
+					<span>{{ data.category }} </span>
+				</p>
+
+	            <h4>{{ data.title }}</h4>
+	            <div class="btn-group" role="group" aria-label="...">
+				 
+		            <button type="button" class="btn btn-default btn-xs">
+		            	<span class="glyphicon glyphicon-heart"></span>
+		            	  {{data.favourite }}
+		            </button>
+		             <button type="button" class="btn btn-default btn-xs">
+		            	<span class=" glyphicon glyphicon-thumbs-down"></span>
+		            	  {{ data.dislike }}
+		            </button>
+	           	</div>
+	           	<div class="btn-group share" role="group" aria-label="...">
+				 
+		            <button type="button" class="btn btn-default btn-xs">
+		            	<span class="glyphicon glyphicon-share"></span>
+		            </button>
+		             <button type="button" class="btn btn-default btn-xs">
+		            	<span class="glyphicon glyphicon-star"></span>
+		            </button>
+	           	</div>
+	           
+	        </article>
+		</li>
+	</ul>
+</div>
